@@ -38,7 +38,7 @@ $toys = [
   new Toy(new Category('Cat', 'catIcon'), 'KONG', 'Shells Turtle!', 'Turtle!', 78228, 9.99, true, './assets/turtle.jpg', 'nylon e TPR', '25x10'),
   new Toy(new Category('Dog', 'dogIcon'), 'Chuckit!', 'Chuckit!', 'Chuckit!', 25228, 3.99, false, './assets/palla.jpg', 'caucciu', '10x10'),
   new Toy(new Category('Cat', 'catIcon'), 'KONG', 'Shells Turtle!', 'Turtle!', 78228, 9.99, true, './assets/turtle.jpg', 'nylon e TPR', '25x10')
-]
+];
 
 ?>
 
@@ -50,10 +50,14 @@ $toys = [
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css' integrity='sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==' crossorigin='anonymous' />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css' integrity='sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==' crossorigin='anonymous'/>
   <style>
     h2 {
       font-size: 3rem;
       font-weight: bold;
+    }
+    i {
+      font-size: 4rem;
     }
     img {
       max-width: 100%;
@@ -84,6 +88,13 @@ $toys = [
       <div class="card" >
         <img src="<?php echo $accessory->image ?>" class="card-img-top" alt="<?php echo $accessory->name ?>">
         <div class="card-body">
+          <h4 class="card-title"><?php echo 'Category: ' . $accessory->category->name ?></h4>
+            <?php if ($accessory->category->name === 'Dog') {
+             echo '<i class="fa-solid fa-dog"></i>';
+            } else {
+            echo '<i class="fa-solid fa-cat"></i>';
+            };
+            ?>
           <h3 class="card-title py-3"><?php echo 'Product: <br/>' . '<strong>' . $accessory->name . '</strong>'?></h3>
           <h4 class="card-title"><?php echo 'Brand: ' .$accessory->brand ?></h4>
           <h4 class="card-title"><?php echo 'Model: ' .$accessory->model ?></h4>
@@ -111,6 +122,13 @@ $toys = [
       <div class="card" >
         <img src="<?php echo $toy->image ?>" class="card-img-top" alt="<?php echo $toy->name ?>">
         <div class="card-body">
+          <h4 class="card-title"><?php echo 'Category: ' . $accessory->category->name ?></h4>
+            <?php if ($accessory->category->name === 'Dog') {
+            echo '<i class="fa-solid fa-dog"></i>';
+            } else {
+            echo '<i class="fa-solid fa-cat"></i>';
+            };
+            ?>
           <h3 class="card-title py-3"><?php echo 'Product: <br/>' . '<strong>' . $toy->name . '</strong>'?></h3>
           <h4 class="card-title"><?php echo 'Brand: ' .$toy->brand ?></h4>
           <h4 class="card-title"><?php echo 'Model: ' .$toy->model ?></h4>
@@ -138,6 +156,13 @@ $toys = [
       <div class="card" >
         <img src="<?php echo $food->image ?>" class="card-img-top" alt="<?php echo $food->name ?>">
         <div class="card-body">
+          <h4 class="card-title"><?php echo 'Category: ' . $accessory->category->name ?></h4>
+            <?php if ($accessory->category->name === 'Dog') {
+              echo '<i class="fa-solid fa-dog"></i>';
+            } else {
+            echo '<i class="fa-solid fa-cat"></i>';
+            };
+            ?>
           <h3 class="card-title py-3"><?php echo 'Product: <br/>' . '<strong>' . $food->name . '</strong>'?></h3>
           <h4 class="card-title"><?php echo 'Brand: ' .$food->brand ?></h4>
           <h4 class="card-title"><?php echo 'Model: ' .$food->model ?></h4>
